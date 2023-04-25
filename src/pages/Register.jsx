@@ -4,7 +4,7 @@ import Add from "../image/add.png"
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, storage, db } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { doc, setDoc, addDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link} from "react-router-dom";
 
 
@@ -24,7 +24,7 @@ const Register = () => {
       try {
         //Create user
         const res = await createUserWithEmailAndPassword(auth, email, password);
-  
+        console.log(loading);
         //Create a unique image name
         const date = new Date().getTime();
         const storageRef = ref(storage, `${displayName + date}`);
