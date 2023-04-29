@@ -6,6 +6,7 @@
     --accent1: #a2ded0;
     --accent2: #cfcdcd;
     --accent3: #1d6e91;
+    --dis:"none"
     }
 
 .home {
@@ -14,26 +15,58 @@ height: 100vh;
 display:flex;
 justify-content: center;
 align-items: center;
+margin: 0px;
+padding: 0%;
+overflow: hidden;
 }
 
 .container {
     border: 1px solid white;
     border-radius: 5px;
-    width: 65%;
+    width: 100%;
     height: 95%;
     display: flex;
     overflow: hidden;
 
 }
+.sidebarToggle{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 
 .sidebar{
-    flex: 1;
     border-right: 1px solid black;
+    display: absolute;
+    height: 100%;
+    transition: 0.5s;
+}
+.ontop{
+    z-index: 1;
+    position: absolute;
     background-color: var(--secondaryColor);
+    height: 95%;
+    overflow: hidden;
+}
+
+.sidebarspace{
+    width:80px;
+    height: 100%;
+    background-color: var(--secondaryColor);
+    overflow-x: visible;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
 }
 
 .chat{
-    flex: 2;
+    width: calc(100% - 80px);
 }
 
 .navbar{
@@ -97,6 +130,7 @@ align-items: center;
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .userChat:hover{
@@ -120,7 +154,7 @@ align-items: center;
 
 .userChatInfo p{
     font-size: 14px;
-    color: var(--primaryColor)
+    color: var(--primaryColor);
 }
 
 .chatInfo{
@@ -155,7 +189,11 @@ align-items: center;
     gap: 20px;
 }
 
-
+.timestamp{
+    display: flex;
+    flex-direction: column;
+    font-size: x-small;
+}
 
 .message.owner{
     flex-direction: row-reverse;

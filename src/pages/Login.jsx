@@ -5,7 +5,10 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
 
+
 const Login = () => {
+
+  
 
     const [err, setErr] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -36,6 +39,7 @@ const Login = () => {
                     <input type="password" name="password" id="password" placeholder="password " />
                     <button>Sign in</button>
                 </form>
+                
                 <p>You don't have an account? <Link to="/register">Sign up</Link></p>
                 {err && <span>Something went wrong</span>}
             </div>

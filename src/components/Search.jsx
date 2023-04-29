@@ -9,11 +9,14 @@ const Search = () => {
     const [user, setUser] = useState(null);
     const [err, setErr] = useState(false);
 
-    const { currentUser } = useContext(AuthContext)
+    const { currentUser } = useContext(AuthContext);
+
+   
 
     const handleSearch = async () => {
         const q = query(collection(db, "users"),
-            where("displayName", "==", username));
+            where("displayName", '>=', username),
+            where("displayName", '<=', username+ '\uf8ff'));
 
         try {
             const querySnapshot = await getDocs(q);
