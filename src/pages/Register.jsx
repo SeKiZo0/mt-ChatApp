@@ -27,7 +27,7 @@ const Register = () => {
 
         const displayName = res.user.displayName;
         const email = res.user.email;
-        const photoURL = res.user.photoURL;
+        //const photoURL = res.user.photoURL;
 
         const date = new Date().getTime();
         const storageRef = ref(storage, `${displayName + date}`);

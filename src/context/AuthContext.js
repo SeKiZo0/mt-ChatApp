@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect } from "react";
 import React, { useState } from 'react';
 import { auth } from "../firebase";
-import { onAuthStateChanged, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
+import { onAuthStateChanged} from "firebase/auth";
 
 
 
@@ -20,10 +20,6 @@ export const AuthContextProvider = ({ children }) => {
             unsub();
         };
     }, []);
-
-    const value = {
-        currentUser,
-      };
 
     return (
         <AuthContext.Provider value={{ currentUser }}>
