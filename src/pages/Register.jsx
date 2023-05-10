@@ -70,10 +70,11 @@ const Register = () => {
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
-    const displayName = e.target[0].value;
-    const email = e.target[1].value;
-    const password = e.target[2].value;
-    const file = e.target[3].files[0];
+    console.log(e)
+    const displayName = document.getElementsByName("name")[0].value;
+    const email = document.getElementsByName("email")[0].value;
+    const password = document.getElementsByName("password")[0].value;
+    const file = document.getElementsByName("file")[0].files[0];
 
     try {
       //Create user
@@ -121,7 +122,7 @@ const Register = () => {
         <span className="logo">woofer</span>
         <span className="title">Register</span>
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="display name" />
+          <input type="text" placeholder="display name" name='name'/>
           <input type="email" name="email" id="email" placeholder="email" />
           <input type="password" name="password" id="password" placeholder="password " />
           <input style={{ display: "none" }} type="file" name="file" id="file" />
@@ -130,9 +131,8 @@ const Register = () => {
             <span>Add an avatar</span>
           </label>
           <button onClick={handleSubmit}>Sign up</button>
-
         </form>
-
+        
         <GoogleButton onClick={googleSignIn}/>
         <p>You got an account? <Link to="/login">Login</Link></p>
         {err && <span>Something went wrong</span>}

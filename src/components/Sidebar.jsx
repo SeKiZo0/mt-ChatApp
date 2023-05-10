@@ -5,7 +5,7 @@ import Search from "./Search";
 import Chats from "./Chats";
 import 'font-awesome/css/font-awesome.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faGear} from '@fortawesome/free-solid-svg-icons'
 
 const Sidebar = ({ children }) => {
 
@@ -19,6 +19,7 @@ const Sidebar = ({ children }) => {
         <div style={{ width: isOpen ? "300px" : "80px" }} className="sidebar">
 
             <div className="sidebarToggle">
+                <FontAwesomeIcon icon={faGear} className="icon" style={{display:"none"}}/>
                 <FontAwesomeIcon icon={faBars} className="icon" onClick={toggle} />
             </div>
             <div style={{ display: isOpen ? "block" : "none"}}>
